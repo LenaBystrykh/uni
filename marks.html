@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="angular-1.8.2/angular.js"></script>
+        <script type="text/javascript" src="main.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>Зачетная книжка</title>
+    </head>
+    <body>
+        <div ng-app="mainApp" ng-controller="marksContoller">
+            <nav id="navbar">
+                <ul>
+                    <li><a href="marks.html">Зачетная книжка</a></li>
+                    <li><a href="tasks.html">Домашнее задание</a></li>
+                    <li><a href="plan.html">Учебный план</a></li>
+                </ul>
+            </nav>
+            <h1>Зачетная книжка</h1>
+            <h3>Быстрых Елена</h3>
+            <h3>Программная инженерия</h3>
+            <h3>1 курс</h3>
+            <p class="search">Поиск: <input type="text" ng-model="search"/></p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th ng-click="order('subject'); color()" style="cursor: pointer;">Дисциплина</th>
+                        <th ng-click="order('date')" style="cursor: pointer;">Дата экзамена</th>
+                        <th ng-click="order('teacher')" style="cursor: pointer;">Преподаватель</th>
+                        <th ng-click="order('mark')" style="cursor: pointer;">Оценка</th>
+                        <th ng-click="order('retakes')" style="cursor: pointer;">Пересдачи</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="m in mark.data | filter : search | orderBy : dataSort">
+                        <td>{{ m.subject }}</td>
+                        <td>{{ m.date }}</td>
+                        <td>{{ m.teacher }}</td>
+                        <td>{{ m.mark }}</td>
+                        <td>{{ m.retakes }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,109 @@
+body{
+    font-family: "JournalSansNew-Regular", "Trebuchet MS", "Lucida Grande", Tahoma, sans-serif;
+    font-size: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+body h3{
+    padding-bottom: 20px;
+    display: inline;
+    margin-left: 40px;
+}
+
+body h1{
+    padding-left: 20px;
+    margin: 20px 0 0 20px; 
+}
+
+body h4{
+    padding-top: 20px;
+
+}
+
+.search{
+    margin-left: 40px;
+}
+
+input{
+    width: 90%;
+    height: 30px;
+}
+
+table{
+    margin-left: 40px;
+    border-collapse: collapse;
+    width: 93%;
+    margin-bottom: 20px;
+}
+
+table th,td{
+    border-color: gainsboro;
+    border-style: solid;
+    border-width: 2px;
+    padding: 10px;
+}
+
+table th{
+    background-color: rgb(72, 99, 255);
+    color: white;
+}
+
+table th:active{
+    background-color: black;
+    color: white;
+}
+
+.ed-plan{
+    background-color: rgb(72, 99, 255);
+    color: white;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.course, .sub{
+    border-color: gainsboro;
+    border-style: solid;
+    border-width: 2px;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    text-align: center;
+}
+
+.empty{
+    background-color: gainsboro;
+}
+
+.subjects{
+    background-color:white;
+    color: black;
+}
+
+section{
+    margin: 0px 40px;
+}
+
+#navbar{
+    background-color: rgb(72, 99, 255);
+    padding: 10px;
+}
+#navbar ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+#navbar li{
+    display: inline;
+}
+
+#navbar a {
+	color:white;
+	text-decoration: none;
+	font-size: 24px;
+	padding-right: 15px;
+}
+
+#navbar a:hover {
+	color: black;
+}

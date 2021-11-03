@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="angular-1.8.2/angular.js"></script>
+        <script type="text/javascript" src="main.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>Домашнее задание</title>
+    </head>
+    <body>
+        <div ng-app="mainApp" ng-controller="tasksContoller">
+            <nav id="navbar">
+                <ul>
+                    <li><a href="marks.html">Зачетная книжка</a></li>
+                    <li><a href="tasks.html">Домашнее задание</a></li>
+                    <li><a href="plan.html">Учебный план</a></li>
+                </ul>
+            </nav>
+            <h1>Домашнее задание</h1>
+            <h3>1 курс</h3>
+            <h3>Программная инженерия</h3>
+            <p class="search">Поиск: <input type="text" ng-model="search"/></p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th ng-click="order('subject')" style="cursor: pointer;">Дисциплина</th>
+                        <th ng-click="order('task')" style="cursor: pointer;">Задание</th>
+                        <th ng-click="order('deadline')" style="cursor: pointer;">Срок сдачи</th>
+                        <th ng-click="order('done')" style="cursor: pointer;">Сдано</th>
+                        <th ng-click="order('mark')" style="cursor: pointer;">Оценка</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="t in task.data | filter : search | orderBy : dataSort">
+                        <td>{{ t.subject }}</td>
+                        <td>{{ t.task }}</td>
+                        <td>{{ t.deadline }}</td>
+                        <td>{{ task.doneHomework(t.done) }}</td>
+                        <td>{{ t.mark }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
